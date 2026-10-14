@@ -17,7 +17,6 @@ import ru.kutorov.MySecondTestAppSpringBoot.service.ModifyResponseService;
 import ru.kutorov.MySecondTestAppSpringBoot.service.ValidationService;
 import ru.kutorov.MySecondTestAppSpringBoot.util.DateTimeUtil;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Slf4j
@@ -47,6 +46,8 @@ public class MyController {
                 .errorMessage(ErrorMessages.EMPTY)
                 .build();
         log.info("create response: {}", response);
+        long differentTime = System.currentTimeMillis() - request.getRequestTime();
+        log.info("Разница между отправкой и получением: {} мс", differentTime);
 
         try{
             validationService.isValid((bindingResult));

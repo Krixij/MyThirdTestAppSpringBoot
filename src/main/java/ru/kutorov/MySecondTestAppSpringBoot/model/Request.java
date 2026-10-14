@@ -23,7 +23,7 @@ public class Request {
     @Size(max = 32)
     private String operationUid;
 
-    private Systems systemName;
+    private String systemName;
 
     private String systemTime;
 
@@ -36,6 +36,7 @@ public class Request {
     private int templateId;
     private int productCode;
     private int smsCode;
+    private long requestTime;
 
     @Override
     public String toString(){
